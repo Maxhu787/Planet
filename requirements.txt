@@ -5,4 +5,4 @@ pillow
 qtwidgets
 darkdetect
 pynbt
-editpi
+editpi>=1.1

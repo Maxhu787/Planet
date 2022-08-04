@@ -54,7 +54,7 @@ Instead of making you type in every single field, Planet lets you write it one t
 #### Prerequisites
 * [Minecraft Pi: Reborn](https://jenkins.thebrokenrail.com) AppImage or DEB install
 * PyQt5
-*i Python 3
+* Python 3
 * `pypresence`
 * `qtdarktheme`
 * Pillow
