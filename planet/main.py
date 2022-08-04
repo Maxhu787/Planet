@@ -51,7 +51,9 @@ if os.path.exists("/usr/lib/planet-launcher/"):
 
 try:
     _ = gettext.translation(
-        "main", localedir=str(absolute_path) + "/assets/translations/", languages=[LOCALE]
+        "main",
+        localedir=str(absolute_path) + "/assets/translations/",
+        languages=[LOCALE],
     ).gettext
 except:
     _ = gettext.translation(
@@ -154,15 +156,15 @@ class ConfigPluto(QDialog):
         )  # Button for Pre-installed debs
         self.premade_btn.clicked.connect(self.link_appimage)  # Connect to the function
 
-        #self.flatpak_btn = QPushButton(_("Link flatpak"))  # Button for linking flatpak
-        #self.flatpak_btn.clicked.connect(self.link_flatpak)  # Connect to the function
+        # self.flatpak_btn = QPushButton(_("Link flatpak"))  # Button for linking flatpak
+        # self.flatpak_btn.clicked.connect(self.link_flatpak)  # Connect to the function
 
         # Adding things to widgets
         layout.addWidget(titlewidget)
         layout.addWidget(info_label)
         layout.addWidget(self.executable_btn)
         layout.addWidget(self.premade_btn)
-        #layout.addWidget(self.flatpak_btn)
+        # layout.addWidget(self.flatpak_btn)
 
         self.setLayout(layout)
 
@@ -538,13 +540,13 @@ class Planet(QMainWindow):
         self.serversedit = QTextEdit()  # Create a text editing area
 
         if not os.path.exists(f"/home/{USER}/.minecraft-pi/servers.txt"):
-            with open(f"/home/{USER}/.minecraft-pi/servers.txt", 'w') as servers:
+            with open(f"/home/{USER}/.minecraft-pi/servers.txt", "w") as servers:
                 servers.write("pbptanarchy.tk")
 
         self.serversedit.textChanged.connect(
             self.save_servers
         )  # Connect on change to the save function
-        with open(f"/home/{USER}/.minecraft-pi/servers.txt", 'r') as servers:
+        with open(f"/home/{USER}/.minecraft-pi/servers.txt", "r") as servers:
             self.serversedit.setPlainText(
                 servers.read()
             )  # Set the text of the text editing area
@@ -619,14 +621,14 @@ class Planet(QMainWindow):
 
         self.delete_appimage_button = QPushButton(_("Delete"))
         self.delete_appimage_button.clicked.connect(self.delete_appimage)
-        
+
         mcpit_install_label = QLabel(_("Install texture pack"))
-     
+
         self.import_mcpit_button = QPushButton(_("Select file"))
         self.import_mcpit_button.clicked.connect(self.install_texture_pack)
-        
+
         mcpit_delete_label = QLabel(_("Delete texture pack"))
-        
+
         self.delete_mcpit_button = QPushButton(_("Delete"))
         self.delete_mcpit_button.clicked.connect(mcpit.erase_pack)
 
@@ -638,12 +640,12 @@ class Planet(QMainWindow):
 
         layout.addWidget(appimage_label, 2, 0)
         layout.addWidget(self.delete_appimage_button, 2, 1)
-        
+
         layout.addWidget(mcpit_install_label)
-        layout.addWidget(self.import_mcpit_button,  3, 1)
-        
+        layout.addWidget(self.import_mcpit_button, 3, 1)
+
         layout.addWidget(mcpit_delete_label)
-        layout.addWidget(self.delete_mcpit_button,  4, 1)
+        layout.addWidget(self.delete_mcpit_button, 4, 1)
 
         widget.setLayout(layout)
 
@@ -746,16 +748,18 @@ class Planet(QMainWindow):
             Image.open(filename[0]).crop((0, 0, 64, 32)).convert("RGBA").save(
                 f"/home/{USER}/.minecraft-pi/overrides/images/mob/char.png"
             )
-            
+
     def install_texture_pack(self):
         pack = QFileDialog.getOpenFileName(
-            self, _("Select pack file"), "/", "mcpit files (*.mcpit);;PePack files (*.zip *.pepack)"
+            self,
+            _("Select pack file"),
+            "/",
+            "mcpit files (*.mcpit);;PePack files (*.zip *.pepack)",
         )
         if pack[1] == "mcpit files (*.mcpit)":
-            mcpit.mcpit_install(pack[0],  False)
+            mcpit.mcpit_install(pack[0], False)
         else:
             mcpit.pepack_install(pack[0])
-        
 
     def delete_config(self):
         dialog = QMessageBox()
