@@ -99,7 +99,7 @@ SPLASHES = [
     "YOU SHPEAK WHEN SHPOKEN TO!",
     "SSHHUT UP!",
     "You were exclusively banned from the deep dark!",
-    "We got the enchanter!", 
+    "We got the enchanter!",
     "S tier!",
     "Kraineff is a thief",
     "Top 10 Bdubs rage collection!",

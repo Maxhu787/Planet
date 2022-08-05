@@ -57,8 +57,9 @@ try:
     ).gettext
 except:
     _ = gettext.translation(
-        "main", localedir=str(absolute_path) + "/assets/translations/", languages=["en_US.UTF-8
-"]
+        "main",
+        localedir=str(absolute_path) + "/assets/translations/",
+        languages=["en_US.UTF-8"],
     ).gettext
 
 # Local imports
@@ -87,7 +88,7 @@ dark_stylesheet = qdarktheme.load_stylesheet()
 
 USER = os.getenv("USER")  # Get the username, used for later
 
-if USER == 'root':
+if USER == "root":
     raise Exception("Don't run Planet as root.")
 
 # Create the mods directory if it does not exist
