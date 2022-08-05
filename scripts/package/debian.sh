@@ -16,7 +16,7 @@ cp ./LICENSE ./build/planet/DEBIAN/license
 cp ./scripts/package/deb/control ./build/planet/DEBIAN/control
 cp ./scripts/package/deb/postinst ./build/planet/DEBIAN/postinst
 cp ./scripts/package/deb/postrm ./build/planet/DEBIAN/postrm
-wget https://github.com/MCPI-Revival/MCPIedit/raw/master/pi-nbt.c -O ./build/planet/usr/lib/planet-launcher/pi-nbt.c -q
+#wget https://github.com/MCPI-Revival/MCPIedit/raw/master/pi-nbt.c -O ./build/planet/usr/lib/planet-launcher/pi-nbt.c -q
 
 dpkg-deb --build ./build/planet
 mkdir dist
