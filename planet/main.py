@@ -86,6 +86,9 @@ dark_stylesheet = qdarktheme.load_stylesheet()
 
 USER = os.getenv("USER")  # Get the username, used for later
 
+if USER == 'root':
+    raise Exception("Don't run Planet as root.")
+
 # Create the mods directory if it does not exist
 if not os.path.exists(f"/home/{USER}/.planet-launcher/mods"):
     os.makedirs(f"/home/{USER}/.planet-launcher/mods")
