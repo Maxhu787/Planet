@@ -118,6 +118,10 @@ Use [our PPA](https://github.com/mcpiscript/ppa)
 - [ ] Chat logging
 - [ ] MarketPi
 
+## Troubleshooting
+### Permission denied or `No such file or directory`
+You have run Planet with `sudo`. NEVER RUN PLANET WITH SUDO. THIS MAKES YOU LOSE OWNERSHIP OF FOLDERS AND BREAKS PLANET.
+
 ## Contributing
 
 ### Creating A Pull Request
