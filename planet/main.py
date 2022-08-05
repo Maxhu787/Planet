@@ -57,7 +57,8 @@ try:
     ).gettext
 except:
     _ = gettext.translation(
-        "main", localedir=str(absolute_path) + "/assets/translations/", languages=["en"]
+        "main", localedir=str(absolute_path) + "/assets/translations/", languages=["en_US.UTF-8
+"]
     ).gettext
 
 # Local imports
