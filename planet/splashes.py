@@ -95,7 +95,7 @@ SPLASHES = [
     "Most end with!",
     "How am I going to feed jelly those days?",
     "There is only one can of cat food left, and that's going to the market",
-    "We ashk for a shmall donatshion of ten thoushand diamondshs!"
+    "We ashk for a shmall donatshion of ten thoushand diamondshs!",
     "YOU SHPEAK WHEN SHPOKEN TO!",
     "SSHHUT UP!",
     "You were exclusively banned from the deep dark!",
