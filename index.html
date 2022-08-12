@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -7,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="./img/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.ico" />
     <link rel="stylesheet" href="./css/styles.css">
     <script type="module" src="./js/jquery-3.6.0.min.js"></script>
     <title>Planet Launcher</title>
@@ -17,10 +18,12 @@
             animation-iteration-count: s1;
             animation-fill-mode: forwards;
         }
+
         @keyframes fadeInAnimation {
             0% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 1;
             }
@@ -28,8 +31,18 @@
     </style>
 
 </head>
+
 <body>
     <main>
+        <div id="sideNav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="sideBar_close()">&times;</a>
+            <a class="sideBar-link" href="#about">about</a>
+            <a class="sideBar-link" href="#features">features</a>
+            <a class="sideBar-link" href="#github">github page</a>
+            <div id="sidenav-shadowBox">
+                <a id="sideNav-g4o2" href="https://github.com/Maxhu787" target="_blank" class="rainbow rainbow_text_animated selectDisable">made by g4o2</a>
+            </div>
+        </div>
         <header id="nav" class="navbar-header">
             <div class="container">
                 <div class="logo-container">
@@ -42,26 +55,30 @@
                         <li><a href="#about">about</a></li>
                         <li><a href="#features">features</a></li>
                         <li><a href="#github">github page</a></li>
-                        <!--<li><a id="stats"></a></li>-->
-                        <li><a id="g4o2" href="https://github.com/Maxhu787" target="_blank">MADE BY g4o2</a></li>
+                        <li><a id="g4o2" class="rainbow rainbow_text_animated" href="https://github.com/Maxhu787" target="_blank">MADE BY g4o2</a></li>
                     </ul>
                 </nav>
+                <button id="sideBar-btn" onclick="sideBar_open()">☰</button>
             </div>
         </header>
         <div id="particles"></div>
         <section id="about">
             <img id="header-img" class="selectDisable" src="./img/planet-logo.png" height="175" width=auto>
-            <h1 class="selectDisable">Planet Launcher</h1>
-            <h3>An interactive launcher for minecraft pi edition, reborn!</h3>
+            <div id="shadowBox">
+                <a class="rainbow rainbow_text_animated selectDisable">Planet Launcher</a>
+            </div>
+            <h3>An interactive launcher for minecraft pi edition, reborn!<h3>
         </section>
-        <section id="features"><!--&#60; &#62;-->
+        <section id="features">
+            <!--&#60; &#62;-->
             <button class="leftBtn card-btn" onclick="prev()"><img src="./img/left.svg"></button>
             <div class="card card-1">
                 <img id="card-img" class="card-img" src="./img/screenshot1.png" alt="Screenshot">
                 <div class="container">
                     <h4><b>Planet Launcher</b></h4>
-                    <p id="cardText">Instead of making you type in every single field, Planet lets you write it one time, auto-save, and forget for the rest
-                    of your life.</p>
+                    <p id="cardText">Instead of making you type in every single field, Planet lets you write it one
+                        time, auto-save, and forget for the rest
+                        of your life.</p>
                 </div>
             </div>
             <button class="rightBtn card-btn" onclick="next()"><img src="./img/right.svg"></button>
@@ -77,27 +94,27 @@
         particlesJS.load('particles', './particle-config.json', function () {
         })
         var prevScrollpos = window.pageYOffset;
-            window.onscroll = function () {
-                var currentScrollPos = window.pageYOffset;
-                /*if (prevScrollpos > currentScrollPos) {
-                    document.getElementById("nav").style.opacity = "1";
-                } else {
-                    document.getElementById("nav").style.opacity = "0";
-                }*/
-                prevScrollpos = currentScrollPos;
-                if(window.pageYOffset > 220) {
-                    document.getElementsByClassName("card")[0].style.width = "30%";
-                } else {
-                    document.getElementsByClassName("card")[0].style.width = "20%";
-                }
-                //document.getElementById("stats").innerHTML = Math.round(window.pageYOffset);
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            /*if (prevScrollpos > currentScrollPos) {
+                document.getElementById("nav").style.opacity = "1";
+            } else {
+                document.getElementById("nav").style.opacity = "0";
+            }*/
+            prevScrollpos = currentScrollPos;
+            if (window.pageYOffset > 220) {
+                document.getElementsByClassName("card")[0].style.width = "30%";
+            } else {
+                document.getElementsByClassName("card")[0].style.width = "20%";
             }
-            window.onload = function() {
-                window.scroll({
-                    top: 0,
-                    behavior: "smooth"
-                })
-            }
+            //document.getElementById("stats").innerHTML = Math.round(window.pageYOffset);
+        }
+        window.onload = function () {
+            window.scroll({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
 
         let imgNum = 1;
         let temp = ['./img/screenshot', "1", '.png'];
@@ -105,7 +122,7 @@
         function prev() {
             if (imgNum > 1) {
                 imgNum -= 1;
-            } else if(imgNum = 1) {
+            } else if (imgNum = 1) {
                 imgNum = 5;
             }
             temp[1] = imgNum.toString();
@@ -116,7 +133,7 @@
         function next() {
             if (imgNum < 5) {
                 imgNum += 1;
-            } else if(imgNum = 5) {
+            } else if (imgNum = 5) {
                 imgNum = 1;
             }
             temp[1] = imgNum.toString();
@@ -124,9 +141,9 @@
             setText(imgNum);
         }
         function setText(arr) {
-            if(arr == 1) {
+            if (arr == 1) {
                 document.getElementById("cardText").innerText = "Instead of making you type in every single field, Planet lets you write it one time, auto-save, and forget for the rest of your life";
-            } else if(arr == 2) {
+            } else if (arr == 2) {
                 document.getElementById("cardText").innerText = "No need to type in every single field, just because you forgot to turn on a teeny little flag, Planet remembers it all for you";
             } else if (arr == 3) {
                 document.getElementById("cardText").innerText = "Planet lets you edit server info easily, right inside the launcher";
@@ -140,14 +157,22 @@
 
         //smooth scrolling 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
+        });
+
+        function sideBar_open() {
+            document.getElementById("sideNav").style.width = "100%";
+        }
+        function sideBar_close() {
+            document.getElementById("sideNav").style.width = "0";
+        }
     </script>
 </body>
+
 </html>

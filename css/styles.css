@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
     background-color: rgb(0, 0, 0);
     text-align: center;
@@ -8,13 +8,6 @@ body {
 
 a {
     text-decoration: none;
-}
-
-h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 4em;
-    padding: 5px;
-    color: #ffa500;
 }
 
 h3 {
@@ -75,7 +68,7 @@ h3 {
     transition: all .3s ease-in-out;
     background: rgba(255, 136, 0, 1);
     box-shadow: 0 8px 16px 0 rgba(0, 179, 255, 0.5);
-    bottom: -270px;
+    bottom: 10%;
 }
 
 .card-btn:hover {
@@ -169,7 +162,7 @@ img {
 
 .navbar-header {
     z-index: 999;
-    background: rgb(0, 179, 255);
+    background: rgba(0, 179, 255, .7);
     position: fixed;
     width: 101%;
     margin-top: -100px;
@@ -188,7 +181,7 @@ img {
     width: 54px;
     border-radius: 50px;
     float: left;
-    margin-left: -90px;
+    margin-left: -9%;
     padding-top: 5.5px;
     padding-bottom: 4px;
 }
@@ -212,9 +205,15 @@ nav li {
     padding-top: 23px;
     position: relative;
 }
+nav div {
+    display: inline-block;
+    margin-left: 60px;
+    padding-top: 23px;
+    position: relative;
+}
 
 nav>ul li a {
-    color: #444;
+    color: #000;
     text-transform: uppercase;
     font-size: 14px;
 }
@@ -239,7 +238,69 @@ nav>ul li a:hover::before {
     width: 100%;
 }
 
+#sideBar-btn {
+    display: none;
+    background-color: inherit;
+    border: none;
+    font-size: 23px;
+    margin: 15px 0px 0px 100%;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+#sideBar-btn:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
 /*-----------------------nav-----------------------*/
+/*-------------------side nav----------------------*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    font-family: "orbitron";
+}
+
+.sideBar-link {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sideBar-link:hover {
+    color: rgba(0, 179, 255, .7);
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    font-family: sans-serif;
+    color: #818181;
+    margin-top: 12px;
+}
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+/*-------------------side nav----------------------*/
 #about {
     margin-top: 100px;
 }
@@ -270,9 +331,98 @@ nav>ul li a:hover::before {
 }
 
 #g4o2 {
-    color: grey;
-    font-size: 11px;
-    text-transform: none;
-    font-weight: 100;
+    font-size: 15px;
+    font-family: "orbitron";
+    margin-left: -10px;
+    text-decoration: none;
+    font-weight: 800;
 }
 
+#sideNav-g4o2 {
+    font-size: 20px;
+}
+#sidenav-shadowBox {
+    margin-left: 20px;
+    margin-top: 12px;
+}
+#shadowBox {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.rainbow {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 32px;
+    letter-spacing: 5px;
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px;
+}
+
+.rainbow_text_animated {
+    background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+
+    0%,
+    100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+
+
+@media only screen and (min-width: 460px) and (max-width: 828px) {
+    nav {
+        display: none;
+    }
+    #sideBar-btn {
+        display: block;
+    }
+    .leftBtn {
+        position: absolute;
+        left: 10.5%;
+    }
+
+    .rightBtn {
+        position: absolute;
+        right: 10.5%;
+    }
+}
+@media only screen and (max-width: 460px) {
+    nav {
+        display: none;
+    }
+    #sideBar-btn {
+        display: block;
+        margin-left: 95%;
+    }
+    .leftBtn {
+        position: absolute;
+        left: 7%;
+    }
+
+    .rightBtn {
+        position: absolute;
+        right: 7%;
+    }
+    .card p {
+        font-size: 10px;
+    }
+    .card h4 {
+        font-size: 11px;
+    }
+    body {
+        overflow-x: hidden;
+    }
+}
