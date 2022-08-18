@@ -70,8 +70,8 @@
             <h3>An interactive launcher for minecraft pi edition, reborn!<h3>
         </section>
         <section id="features">
-            <!--&#60; &#62;-->
-            <button class="leftBtn card-btn" onclick="prev()"><img src="./img/left.svg"></button>
+            <h1 class="rainbow rainbow_text_animated selectDisable">Features</h1>
+            
             <div class="card card-1">
                 <img id="card-img" class="card-img" src="./img/screenshot1.png" alt="Screenshot">
                 <div class="container">
@@ -81,6 +81,7 @@
                         of your life.</p>
                 </div>
             </div>
+            <button class="leftBtn card-btn" onclick="prev()"><img src="./img/left.svg"></button>
             <button class="rightBtn card-btn" onclick="next()"><img src="./img/right.svg"></button>
         </section>
         <section id="github">
@@ -100,13 +101,14 @@
                 document.getElementById("nav").style.opacity = "1";
             } else {
                 document.getElementById("nav").style.opacity = "0";
-            }*/
+            }
             prevScrollpos = currentScrollPos;
             if (window.pageYOffset > 220) {
                 document.getElementsByClassName("card")[0].style.width = "30%";
             } else {
                 document.getElementsByClassName("card")[0].style.width = "20%";
-            }
+
+            }*/
             //document.getElementById("stats").innerHTML = Math.round(window.pageYOffset);
         }
         window.onload = function () {

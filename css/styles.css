@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Montserrat:wght@300&family=Orbitron&family=Work+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body {
     background-color: rgb(0, 0, 0);
@@ -9,7 +9,10 @@ body {
 a {
     text-decoration: none;
 }
-
+h1 {
+    font-family: 'orbitron', 'Montserrat';
+    color:#ffa500;
+}
 h3 {
     font-family: monospace, 'IBM Plex Sans Hebrew', sans-serif;
     padding: 10px;
@@ -35,31 +38,6 @@ h3 {
     padding: 100px;
 }
 
-.card {
-    padding: 35px 10px 10px 10px;
-    margin: auto;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: width 1s ease-in-out;
-    width: 20%;
-    border-radius: 6px;
-    cursor: pointer;
-    background: rgb(45, 47, 51, 0.3);
-    color: rgb(0, 179, 255);
-    box-shadow: 0 8px 16px 0 rgba(0, 179, 255, 0.8);
-}
-
-.card:hover {
-    background: rgb(45, 47, 51, 0.7);
-}
-
-.card:hover h4 {
-    color: #ffc200;
-}
-
-.card-img {
-    width: 80%;
-}
-
 .card-btn {
     cursor: pointer;
     border: none;
@@ -68,7 +46,7 @@ h3 {
     transition: all .3s ease-in-out;
     background: rgba(255, 136, 0, 1);
     box-shadow: 0 8px 16px 0 rgba(0, 179, 255, 0.5);
-    bottom: 10%;
+    margin-top: -200px;
 }
 
 .card-btn:hover {
@@ -425,4 +403,35 @@ nav>ul li a:hover::before {
     body {
         overflow-x: hidden;
     }
+}
+
+
+.card {
+    padding: 35px 10px 10px 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: width 1s ease-in-out;
+    border-radius: 6px;
+    cursor: pointer;
+    background: rgb(45, 47, 51, 0.3);
+    color: rgb(0, 179, 255);
+    box-shadow: 0 8px 16px 0 rgba(0, 179, 255, 0.8);
+    width: 35%;
+}
+.card {
+    transform: rotate(-25deg) skew(25deg) scale(0.5);
+    transition: .5s;
+}
+.card img {
+    width: 100%;
+    transition: .5s;
+    opacity: 0.3;
+}
+.card:hover {
+    transform: translate(0px, 0px);
+    background: rgb(45, 47, 51, 0.7);
+}
+.card:hover img {
+    opacity: 1;
 }
