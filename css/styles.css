@@ -426,7 +426,7 @@ nav>ul li a:hover::before {
 .card img {
     width: 100%;
     transition: .5s;
-    opacity: 0.3;
+    transform: translate(40px, -40px);
 }
 .card:hover {
     transform: translate(0px, 0px);
@@ -434,4 +434,6 @@ nav>ul li a:hover::before {
 }
 .card:hover img {
     opacity: 1;
+    filter: blur(0);
+    transform: translate(0px, 0px);
 }
